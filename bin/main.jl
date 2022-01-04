@@ -1,13 +1,12 @@
 using Weave
-using JSON3
-using Tar
+using Dates
 
 const xaxis = get(ENV, "xaxis", "sepal.length")
 const yaxis = get(ENV, "yaxis", "petal.width")
 const date = Dates.today()
 
-const report_name = "weave-iris"
 const path_results = "$(@__DIR__)/../results"
+const report_name = "weave-iris"
 
 weave("$(@__DIR__)/../reports/$(report_name).jmd", 
     out_path = "$(path_results)", 
