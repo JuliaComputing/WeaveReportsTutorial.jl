@@ -8,10 +8,10 @@ const date = Dates.today()
 const path_results = "$(@__DIR__)/../results"
 const report_name = "weave-iris"
 
+ENV["RESULTS_FILE"] = "$(path_results)/$(report_name).html"
+
 weave("$(@__DIR__)/../reports/$(report_name).jmd", 
     out_path = "$(path_results)", 
     fig_path = "$(path_results)/fig", 
     doctype = "md2html",
     args = (date = date, xaxis = xaxis, yaxis = yaxis))
-
-ENV["RESULTS_FILE"] = "$(path_results)/$(report_name).html"
